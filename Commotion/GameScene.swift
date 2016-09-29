@@ -18,22 +18,22 @@ class GameScene: SKScene {
     func startMotionUpdates(){
         // some internal inconsistency here: we need to ask the device manager for device
         
-        if self.motion.deviceMotionAvailable{
+        if self.motion.isDeviceMotionAvailable{
             self.motion.deviceMotionUpdateInterval = 0.1
-            self.motion.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: self.handleMotion)
+            self.motion.startDeviceMotionUpdates(to: OperationQueue.main, withHandler: self.handleMotion as! CMDeviceMotionHandler)
         }
     }
     
-    func handleMotion(motionData:CMDeviceMotion?, error:NSError?){
+    func handleMotion(_ motionData:CMDeviceMotion?, error:NSError?){
         if let gravity = motionData?.gravity {
-            self.physicsWorld.gravity = CGVectorMake(CGFloat(9.8*gravity.x), CGFloat(9.8*gravity.y))
+            self.physicsWorld.gravity = CGVector(dx: CGFloat(9.8*gravity.x), dy: CGFloat(9.8*gravity.y))
         }
     }
     
     // MARK: View Hierarchy Functions
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         
-        backgroundColor = SKColor.whiteColor()
+        backgroundColor = SKColor.white
         
         // start motion for gravity
         self.startMotionUpdates()
@@ -59,37 +59,37 @@ class GameScene: SKScene {
         
         spriteA.position = CGPoint(x: size.width * random(min: CGFloat(0.1), max: CGFloat(0.9)), y: size.height * 0.75)
         
-        spriteA.physicsBody = SKPhysicsBody(rectangleOfSize:spriteA.size)
+        spriteA.physicsBody = SKPhysicsBody(rectangleOf:spriteA.size)
         spriteA.physicsBody?.restitution = random(min: CGFloat(1.0), max: CGFloat(1.5))
-        spriteA.physicsBody?.dynamic = true
+        spriteA.physicsBody?.isDynamic = true
         
         self.addChild(spriteA)
     }
     
-    func addBlockAtPoint(point:CGPoint){
+    func addBlockAtPoint(_ point:CGPoint){
         let 🔲 = SKSpriteNode()
         
-        🔲.color = UIColor.redColor()
+        🔲.color = UIColor.red
         🔲.size = CGSize(width:size.width*0.15,height:size.height * 0.05)
         🔲.position = point
         
-        🔲.physicsBody = SKPhysicsBody(rectangleOfSize:🔲.size)
-        🔲.physicsBody?.dynamic = true
+        🔲.physicsBody = SKPhysicsBody(rectangleOf:🔲.size)
+        🔲.physicsBody?.isDynamic = true
         🔲.physicsBody?.pinned = true
         
         self.addChild(🔲)
 
     }
     
-    func addStaticBlockAtPoint(point:CGPoint){
+    func addStaticBlockAtPoint(_ point:CGPoint){
         let 🔲 = SKSpriteNode()
         
-        🔲.color = UIColor.redColor()
+        🔲.color = UIColor.red
         🔲.size = CGSize(width:size.width*0.1,height:size.height * 0.05)
         🔲.position = point
         
-        🔲.physicsBody = SKPhysicsBody(rectangleOfSize:🔲.size)
-        🔲.physicsBody?.dynamic = true
+        🔲.physicsBody = SKPhysicsBody(rectangleOf:🔲.size)
+        🔲.physicsBody?.isDynamic = true
         🔲.physicsBody?.pinned = true
         🔲.physicsBody?.allowsRotation = false
         
@@ -112,9 +112,9 @@ class GameScene: SKScene {
         top.position = CGPoint(x:size.width*0.5, y:size.height)
         
         for obj in [left,right,top]{
-            obj.color = UIColor.redColor()
-            obj.physicsBody = SKPhysicsBody(rectangleOfSize:obj.size)
-            obj.physicsBody?.dynamic = true
+            obj.color = UIColor.red
+            obj.physicsBody = SKPhysicsBody(rectangleOf:obj.size)
+            obj.physicsBody?.isDynamic = true
             obj.physicsBody?.pinned = true
             obj.physicsBody?.allowsRotation = false
             self.addChild(obj)
@@ -122,7 +122,7 @@ class GameScene: SKScene {
     }
     
     // MARK: UI Delegate Functions
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.addSprite()
     }
     
@@ -131,7 +131,7 @@ class GameScene: SKScene {
         return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
     }
     
-    func random(min min: CGFloat, max: CGFloat) -> CGFloat {
+    func random(min: CGFloat, max: CGFloat) -> CGFloat {
         return random() * (max - min) + min
     }
 }

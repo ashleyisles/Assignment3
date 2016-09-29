@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     let motion = CMMotionManager()
     var totalSteps: Float = 0.0 {
         willSet(newtotalSteps){
-            dispatch_async(dispatch_get_main_queue()){
+            DispatchQueue.main.async{
                 self.stepsSlider.setValue(newtotalSteps, animated: true)
                 self.stepsLabel.text = "Steps: \(newtotalSteps)"
             }
@@ -53,15 +53,15 @@ class ViewController: UIViewController {
         // some internal inconsistency here: we need to ask the device manager for device 
         
         // TODO: should we be doing this from the MAIN queue? You will need to fix that!!!....
-        if self.motion.deviceMotionAvailable{
-            self.motion.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: self.handleMotion)
+        if self.motion.isDeviceMotionAvailable{
+            self.motion.startDeviceMotionUpdates(to: OperationQueue.main, withHandler: self.handleMotion as! CMDeviceMotionHandler)
         }
     }
     
-    func handleMotion(motionData:CMDeviceMotion?, error:NSError?){
+    func handleMotion(_ motionData:CMDeviceMotion?, error:NSError?){
         if let gravity = motionData?.gravity {
             let rotation = atan2(gravity.x, gravity.y) - M_PI
-            self.isWalking.transform = CGAffineTransformMakeRotation(CGFloat(rotation))
+            self.isWalking.transform = CGAffineTransform(rotationAngle: CGFloat(rotation))
         }
     }
     
@@ -70,16 +70,16 @@ class ViewController: UIViewController {
         // is activity is available
         if CMMotionActivityManager.isActivityAvailable(){
             // update from this queue (should we use the MAIN queue here??.... )
-            self.activityManager.startActivityUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: self.handleActivity)
+            self.activityManager.startActivityUpdates(to: OperationQueue.main, withHandler: self.handleActivity)
         }
         
     }
     
-    func handleActivity(activity:CMMotionActivity?)->Void{
+    func handleActivity(_ activity:CMMotionActivity?)->Void{
         // unwrap the activity and disp
         if let unwrappedActivity = activity {
-            dispatch_async(dispatch_get_main_queue()){
-                self.isWalking.text = "Walking: \(unwrappedActivity.walking)\n Still: \(unwrappedActivity.stationary)"
+            DispatchQueue.main.async{
+                self.isWalking.text = "Walking: \(unwrappedActivity.walking)\n Still: \(unwrappedActivity.stationary)\n Running: \(unwrappedActivity.running)\n Cycling: \(unwrappedActivity.cycling)\n Driving: \(unwrappedActivity.automotive)"
             }
         }
     }
@@ -88,13 +88,12 @@ class ViewController: UIViewController {
     func startPedometerMonitoring(){
         //separate out the handler for better readability
         if CMPedometer.isStepCountingAvailable(){
-            pedometer.startPedometerUpdatesFromDate(NSDate(),
-                                                    withHandler: self.handlePedometer)
+            pedometer.startUpdates(from: Date(), withHandler: self.handlePedometer as! CMPedometerHandler)
         }
     }
     
     //ped handler
-    func handlePedometer(pedData:CMPedometerData?, error:NSError?){
+    func handlePedometer(_ pedData:CMPedometerData?, error:NSError?){
         if let steps = pedData?.numberOfSteps {
             self.totalSteps = steps.floatValue
         }

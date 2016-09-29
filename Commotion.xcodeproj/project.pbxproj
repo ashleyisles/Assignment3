@@ -16,6 +16,7 @@
 		B62ED3C31D7F299D00B503DF /* CommotionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62ED3C21D7F299D00B503DF /* CommotionUITests.swift */; };
 		B68B9D4A1D7F6EA8002037A3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B9D491D7F6EA8002037A3 /* GameViewController.swift */; };
 		B68B9D4C1D7F6EFA002037A3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B9D4B1D7F6EFA002037A3 /* GameScene.swift */; };
+		FA4972531D9D660E00574831 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4972521D9D660E00574831 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		B62ED3C41D7F299D00B503DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B68B9D491D7F6EA8002037A3 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B68B9D4B1D7F6EFA002037A3 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		FA4972521D9D660E00574831 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		B62ED3A11D7F299D00B503DF /* Commotion */ = {
 			isa = PBXGroup;
 			children = (
+				FA4972521D9D660E00574831 /* TableViewController.swift */,
 				B62ED3A21D7F299D00B503DF /* AppDelegate.swift */,
 				B62ED3A41D7F299D00B503DF /* ViewController.swift */,
 				B68B9D491D7F6EA8002037A3 /* GameViewController.swift */,
@@ -199,13 +202,17 @@
 				TargetAttributes = {
 					B62ED39E1D7F299D00B503DF = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = EGT4N6FS8J;
+						LastSwiftMigration = 0800;
 					};
 					B62ED3B21D7F299D00B503DF = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = B62ED39E1D7F299D00B503DF;
 					};
 					B62ED3BD1D7F299D00B503DF = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = B62ED39E1D7F299D00B503DF;
 					};
 				};
@@ -265,6 +272,7 @@
 				B62ED3A51D7F299D00B503DF /* ViewController.swift in Sources */,
 				B68B9D4A1D7F6EA8002037A3 /* GameViewController.swift in Sources */,
 				B68B9D4C1D7F6EFA002037A3 /* GameScene.swift in Sources */,
+				FA4972531D9D660E00574831 /* TableViewController.swift in Sources */,
 				B62ED3A31D7F299D00B503DF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,11 +415,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EGT4N6FS8J;
 				INFOPLIST_FILE = Commotion/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SMU.Commotion;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Commotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -419,11 +429,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EGT4N6FS8J;
 				INFOPLIST_FILE = Commotion/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SMU.Commotion;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Commotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -435,6 +447,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SMU.CommotionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Commotion.app/Commotion";
 			};
 			name = Debug;
@@ -447,6 +460,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SMU.CommotionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Commotion.app/Commotion";
 			};
 			name = Release;
@@ -458,6 +472,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SMU.CommotionUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Commotion;
 			};
 			name = Debug;
@@ -469,6 +484,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SMU.CommotionUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Commotion;
 			};
 			name = Release;

@@ -7,6 +7,110 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Step Goal-->
+        <scene sceneID="e1C-qH-z5l">
+            <objects>
+                <viewController title="Step Goal" id="G47-A2-9fY" customClass="GoalViewController" customModule="Commotion" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e3n-us-0lR"/>
+                        <viewControllerLayoutGuide type="bottom" id="O7f-VW-FwA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6p5-Q0-HfX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfo-tt-DDZ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="7sa-pX-BqK"/>
+                                </constraints>
+                                <state key="normal" title="Set"/>
+                                <connections>
+                                    <action selector="setStepGoal:" destination="G47-A2-9fY" eventType="touchUpInside" id="xId-1d-SEi"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Daily Step Goal is:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YZ-eb-dW7">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Xqo-xr-xXy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADf-qg-EDq">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="LtX-i8-Mlc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gab-mZ-aKy">
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61d-iU-RxO">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="ORr-XD-9cS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Start Walking!">
+                                    <color key="titleShadowColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="push" identifier="startWalking" id="yPq-6s-vgj"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set A Goal!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGO-xz-yCf">
+                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Step Goal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HLg-8X-Apy">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="149" id="LJW-4n-IiX"/>
+                                    <constraint firstAttribute="height" constant="30" id="SOj-Qw-iNe"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EGO-xz-yCf" firstAttribute="leading" secondItem="6p5-Q0-HfX" secondAttribute="leadingMargin" constant="64" id="1uE-s4-mZS"/>
+                            <constraint firstItem="4YZ-eb-dW7" firstAttribute="leading" secondItem="6p5-Q0-HfX" secondAttribute="leadingMargin" constant="82" id="6X5-Pi-JTD"/>
+                            <constraint firstItem="O7f-VW-FwA" firstAttribute="top" secondItem="61d-iU-RxO" secondAttribute="bottom" constant="8" symbolic="YES" id="9si-S5-vMR"/>
+                            <constraint firstItem="HLg-8X-Apy" firstAttribute="leading" secondItem="gab-mZ-aKy" secondAttribute="leading" constant="-26" id="Gzf-1b-Z2P"/>
+                            <constraint firstItem="61d-iU-RxO" firstAttribute="leading" secondItem="6p5-Q0-HfX" secondAttribute="leading" id="NCa-hd-EkF"/>
+                            <constraint firstItem="Wfo-tt-DDZ" firstAttribute="top" secondItem="HLg-8X-Apy" secondAttribute="bottom" constant="15" id="OFe-r0-V4u"/>
+                            <constraint firstItem="HLg-8X-Apy" firstAttribute="trailing" secondItem="gab-mZ-aKy" secondAttribute="trailing" constant="26" id="Sha-fl-4Pl"/>
+                            <constraint firstItem="HLg-8X-Apy" firstAttribute="centerY" secondItem="6p5-Q0-HfX" secondAttribute="centerY" id="ZUa-f3-i2h"/>
+                            <constraint firstItem="gab-mZ-aKy" firstAttribute="top" secondItem="4YZ-eb-dW7" secondAttribute="bottom" constant="8" symbolic="YES" id="aRW-EA-g6H"/>
+                            <constraint firstItem="HLg-8X-Apy" firstAttribute="top" secondItem="EGO-xz-yCf" secondAttribute="bottom" constant="57" id="bGy-dL-qSu"/>
+                            <constraint firstItem="HLg-8X-Apy" firstAttribute="centerX" secondItem="Wfo-tt-DDZ" secondAttribute="centerX" id="dSK-lm-aEl"/>
+                            <constraint firstItem="4YZ-eb-dW7" firstAttribute="top" secondItem="Wfo-tt-DDZ" secondAttribute="bottom" constant="42" id="kow-Rl-VsI"/>
+                            <constraint firstItem="gab-mZ-aKy" firstAttribute="centerX" secondItem="ADf-qg-EDq" secondAttribute="centerX" id="ldJ-c6-lMv"/>
+                            <constraint firstAttribute="trailing" secondItem="61d-iU-RxO" secondAttribute="trailing" id="mBH-2y-mvf"/>
+                            <constraint firstItem="ADf-qg-EDq" firstAttribute="centerX" secondItem="61d-iU-RxO" secondAttribute="centerX" id="pRe-ep-03f"/>
+                            <constraint firstItem="Wfo-tt-DDZ" firstAttribute="centerX" secondItem="4YZ-eb-dW7" secondAttribute="centerX" id="ut9-M0-MnI"/>
+                            <constraint firstItem="61d-iU-RxO" firstAttribute="top" secondItem="ADf-qg-EDq" secondAttribute="bottom" constant="42" id="vFr-Rn-2eV"/>
+                            <constraint firstItem="ADf-qg-EDq" firstAttribute="top" secondItem="gab-mZ-aKy" secondAttribute="bottom" constant="8" symbolic="YES" id="wr2-Tl-alX"/>
+                            <constraint firstItem="EGO-xz-yCf" firstAttribute="centerX" secondItem="HLg-8X-Apy" secondAttribute="centerX" id="ymV-pF-xJz"/>
+                            <constraint firstItem="EGO-xz-yCf" firstAttribute="top" secondItem="e3n-us-0lR" secondAttribute="bottom" constant="140" id="yur-u0-5ZI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Q0G-Ck-DW0"/>
+                    <connections>
+                        <outlet property="setGoal" destination="Wfo-tt-DDZ" id="b0t-bg-GvY"/>
+                        <outlet property="stepGoal" destination="HLg-8X-Apy" id="OWt-7t-K8Y"/>
+                        <outlet property="stepGoalLabel" destination="gab-mZ-aKy" id="NiE-Um-K3e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fYe-yh-e0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="564" y="265.81709145427288"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -51,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="563.768115942029" y="336.68478260869568"/>
+            <point key="canvasLocation" x="1740" y="266"/>
         </scene>
         <!--Assignment 3-->
         <scene sceneID="tpO-2S-dFP">
@@ -72,14 +176,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Module A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QA3-hl-kqs">
-                                                    <frame key="frameInset" minX="15" minY="82" width="73" height="21"/>
+                                                    <frame key="frameInset" minX="15" minY="69" width="164" height="47"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="A fun pedometer app!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0nO-M2-Bbw">
-                                                    <frame key="frameInset" minX="15" minY="103" width="124" height="15"/>
+                                                    <frame key="frameInset" minX="15" minY="116" width="124" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -88,7 +192,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="push" id="qaD-kM-Yml"/>
+                                            <segue destination="G47-A2-9fY" kind="push" id="e32-2c-zzw"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MyCell" textLabel="kRb-Mz-fzz" detailTextLabel="qrW-UE-89A" rowHeight="200" style="IBUITableViewCellStyleSubtitle" id="IJr-K5-TPp">
@@ -99,14 +203,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Module B" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kRb-Mz-fzz">
-                                                    <frame key="frameInset" minX="15" minY="82" width="73" height="21"/>
+                                                    <frame key="frameInset" minX="15" minY="69" width="163" height="47"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="A simple game!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qrW-UE-89A">
-                                                    <frame key="frameInset" minX="15" minY="103" width="87" height="15"/>
+                                                    <frame key="frameInset" minX="15" minY="116" width="87" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -114,6 +218,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="uAs-2Q-GOu" kind="push" id="ThA-Ah-eyC"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>

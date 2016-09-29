@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3C76DB295507287BE7A5430E6A7385793BC1DB80",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3C76DB295507287BE7A5430E6A7385793BC1DB80" : 9223372036854775807,
+    "0BC142ED9C4AAAB3947F3FBC8A63F9504AED93C5" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7153A998-97B4-4DEB-836B-292EA1F24504",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3C76DB295507287BE7A5430E6A7385793BC1DB80" : "Commotion\/",
+    "0BC142ED9C4AAAB3947F3FBC8A63F9504AED93C5" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Commotion",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Commotion.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ashleyisles\/Assignment3.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0BC142ED9C4AAAB3947F3FBC8A63F9504AED93C5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:SMU-MSLC-2016\/Commotion.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3C76DB295507287BE7A5430E6A7385793BC1DB80"
+    }
+  ]
+}

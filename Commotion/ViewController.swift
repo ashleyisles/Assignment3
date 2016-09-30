@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         self.totalSteps = 0.0
         self.startActivityMonitoring()
         self.startPedometerMonitoring()
-        self.startMotionUpdates()
+//        self.startMotionUpdates()
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,10 +87,46 @@ class ViewController: UIViewController {
     // MARK: Pedometer Functions
     func startPedometerMonitoring(){
         //separate out the handler for better readability
-        if CMPedometer.isStepCountingAvailable(){
-            pedometer.startUpdates(from: Date(), withHandler: self.handlePedometer as! CMPedometerHandler)
+//        if CMPedometer.isStepCountingAvailable(){
+//            pedometer.startUpdates(from: Date(), withHandler: self.handlePedometer as! CMPedometerHandler)
+//        }
+        
+//        if(CMPedometer.isStepCountingAvailable()){
+//            
+//            self.pedometer.startUpdates(from: midnightOfToday) { (data: CMPedometerData?, error) -> Void in
+//                DispatchQueue.main.async(execute: { () -> Void in
+//                    if(error == nil){
+//                        print("\(data!.numberOfSteps)")
+//                        self.currentStepsLabel.text = "\(data!.numberOfSteps)"
+//                    }
+//                })
+//            }
+//        }
+        
+        var cal = Calendar.current
+        var comps = cal.dateComponents([.year, .month, .day, .hour, .minute, .second], from: Date())
+        comps.hour = 0
+        comps.minute = 0
+        comps.second = 0
+        let timeZone = TimeZone.current
+        cal.timeZone = timeZone
+        
+        let midnightOfToday = cal.date(from: comps)!
+        
+        if(CMPedometer.isStepCountingAvailable()){
+            
+            self.pedometer.startUpdates(from: midnightOfToday) { (data: CMPedometerData?, error) -> Void in
+                DispatchQueue.main.async(execute: { () -> Void in
+                    if(error == nil){
+                        print("\(data!.numberOfSteps)")
+                        self.stepsLabel.text = "\(data!.numberOfSteps)"
+                    }
+                })
+            }
         }
     }
+    
+    
     
     //ped handler
     func handlePedometer(_ pedData:CMPedometerData?, error:NSError?){

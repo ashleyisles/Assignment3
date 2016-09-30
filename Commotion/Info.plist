@@ -36,5 +36,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSMotionUsageDescription</key>
+	<string>So you can use the accelerometer!</string>
 </dict>
 </plist>

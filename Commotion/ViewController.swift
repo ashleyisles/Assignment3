@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         self.totalSteps = 0.0
         self.startActivityMonitoring()
         self.startPedometerMonitoring()
-//        self.startMotionUpdates()
+//         self.startMotionUpdates()
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,7 +79,26 @@ class ViewController: UIViewController {
         // unwrap the activity and disp
         if let unwrappedActivity = activity {
             DispatchQueue.main.async{
-                self.isWalking.text = "Walking: \(unwrappedActivity.walking)\n Still: \(unwrappedActivity.stationary)\n Running: \(unwrappedActivity.running)\n Cycling: \(unwrappedActivity.cycling)\n Driving: \(unwrappedActivity.automotive)"
+//                self.isWalking.text = "Walking: \(unwrappedActivity.walking)\n Still: \(unwrappedActivity.stationary)\n Running: \(unwrappedActivity.running)\n Cycling: \(unwrappedActivity.cycling)\n Driving: \(unwrappedActivity.automotive)"
+                
+                if(unwrappedActivity.walking){
+                    self.isWalking.text = "Walking"
+                    
+                } else if (unwrappedActivity.running){
+                    self.isWalking.text = "Running"
+                } else if (unwrappedActivity.cycling){
+                    self.isWalking.text = "Cycling"
+                } else if (unwrappedActivity.unknown){
+                    self.isWalking.text = "Unknown"
+                } else if (unwrappedActivity.automotive){
+                    if(unwrappedActivity.stationary){
+                        self.isWalking.text = "Sitting in the Car"
+                    } else {
+                        self.isWalking.text = "Driving"
+                    }
+                } else if (unwrappedActivity.stationary){
+                    self.isWalking.text = "Still"
+                }
             }
         }
     }

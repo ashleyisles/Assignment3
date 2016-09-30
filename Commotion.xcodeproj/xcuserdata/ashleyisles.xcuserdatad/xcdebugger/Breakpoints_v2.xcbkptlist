@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Commotion/ViewController.swift"
-            timestampString = "496896202.541083"
+            timestampString = "496905380.928208"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "startPedometerMonitoring()"
             landmarkType = "7">
          </BreakpointContent>

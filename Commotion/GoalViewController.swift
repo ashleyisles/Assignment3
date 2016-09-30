@@ -14,6 +14,8 @@ class GoalViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var stepGoalLabel: UILabel!
     @IBOutlet weak var setGoal: UIButton!
     
+    var steps:Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +44,9 @@ class GoalViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         stepGoalLabel.text = textField.text
+        steps = Int(textField.text!)!
+        print(steps)
+        
     }
     
     //MARK: - Actions
